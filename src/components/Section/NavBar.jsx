@@ -28,7 +28,7 @@ export default function NavBar() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ position: 'fixed', width: '100%', zIndex:2 }}>
       <AppBar position="static" ref={refNav}>
         <Toolbar
           component="nav"

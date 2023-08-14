@@ -10,7 +10,7 @@ function Footer() {
   const date = new Date().getFullYear();
 
   return (
-    <Box component={"footer"}>
+    <Box component={"footer"} sx={{backgroundColor:'black', marginTop:'5rem'}}>
       <Container sx={{ display: 'flex', justifyContent:'space-between', borderBottom: '1px solid #444', padding :'4rem 0' }}>
         <Box>
           <Typography variant="h3" component="h3" style={{ textTransform: 'uppercase',fontSize:'1.5rem',fontWeight:"bold" }}>
@@ -25,10 +25,10 @@ function Footer() {
             Social
           </Typography>
           <div>
-            <IconButton>
+            <IconButton href='https://github.com/Spioutzw'>
               <GitHubIcon sx={{color:'white'}}/>
             </IconButton>
-            <IconButton>
+            <IconButton href='https://www.linkedin.com/in/roquigny-matthieu-28478b1b3/' >
               <LinkedInIcon sx={{color:'white'}} />
             </IconButton>
           </div>
