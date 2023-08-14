@@ -1,10 +1,20 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-import NavBar from '@/components/NavBar'
+
+import Projet from '@/components/Section/Projet'
+import NavBar from '@/components/Section/NavBar'
+import Accueil from '@/components/Section/Accueil'
+import About from '@/components/Section/About'
+import Contact from '@/components/Section/Contact'
+import Footer from '@/components/Section/Footer'
 
 export default function Home() {
   return (
-      <NavBar/>
-  
+    <>
+      <NavBar />
+      <Accueil />
+      <About />
+      <Projet />
+      <Contact />
+      <Footer />
+    </>
   )
 }

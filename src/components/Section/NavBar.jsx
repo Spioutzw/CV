@@ -6,17 +6,19 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Link from 'next/link';
 import Image from 'next/image';
-import imageProfil from '../../public/images/1627459720791.jpg';
+import imageProfil from '../../../public/images/1627459720791.jpg';
 
 export default function NavBar() {
 
   const [anchorEl, setAnchorEl] = React.useState(null)
   const [menuOpen, setMenuOpen] = React.useState(false);
-  const refNavBar = React.useRef(null);
+  const refNav = React.useRef(null);
   const open = Boolean(anchorEl);
 
+  console.log(anchorEl);
+
   const handleClick = () => {
-    setAnchorEl(refNavBar);
+    setAnchorEl(refNav.current);
     setMenuOpen(!menuOpen);
   };
 
@@ -27,10 +29,10 @@ export default function NavBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" ref={refNav}>
         <Toolbar
           component="nav"
-          sx={{ display: 'flex', justifyContent: 'space-between' }}
+          sx={{ display: 'flex', justifyContent: 'space-between',backgroundColor:'#3c6e71ff' }}
         >
           <div style={{ position: 'relative', display: 'flex' }}>
             <Image
@@ -80,21 +82,21 @@ export default function NavBar() {
               >
                 {menuOpen ? <CloseIcon /> : <MenuIcon />}
               </IconButton>
-              <Menu sx={{ display: { xs: 'block', md: 'none' } }} MenuListProps={{sx: {paddingTop: '0', paddingBottom:"0"}}} id="long-menu" anchorEl={anchorEl} marginThreshold={0.1} open={open} onClose={handleClose} slotProps={{
+              <Menu sx={{ display: { xs: 'block', md: 'none' } }}  MenuListProps={{sx: {paddingTop: '0', paddingBottom:"0"}}} id="long-menu" anchorEl={anchorEl} marginThreshold={0.1} open={open} onClose={handleClose} slotProps={{
                 paper: {
                   style:
                   {
-                    width: '500%',
+                    width: '100%',
                     maxWidth: 'unset',
                     borderRadius: '0 0 4px 4px',
                   }
                 },
                 
               }}>
-                {['Accueil', 'Présentation', 'Projet', 'Contact'].map((option) => (
+                {['Accueil', 'Présentation', 'Projet', 'Contact'].map((option,id) => (
                   <MenuItem sx={{border:'1px solid #eee',padding : '1rem' , '&:hover': {
                     color: '#1976d2',
-                  },}} key={option} onClick={handleClose}>
+                  },}} key={id} onClick={handleClose}>
                     <Link href={`#${option.toLocaleLowerCase()}`}>{option}</Link>
                   </MenuItem>
                 ))}
