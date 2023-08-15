@@ -52,22 +52,22 @@ export default function NavBar() {
 
           <div>
             <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '2rem' }}>
-              <Link href="#accueil">
+              <Link href="/#accueil">
                 <Typography variant="h6" component="div">
                   Accueil
                 </Typography>
               </Link>
-              <Link href="#presentation">
+              <Link href="/#presentation">
                 <Typography variant="h6" component="div">
                   Présentation
                 </Typography>
               </Link>
-              <Link href="#projet">
+              <Link href="/#projet">
                 <Typography variant="h6" component="div">
                   Projet
                 </Typography>
               </Link>
-              <Link href="#contact">
+              <Link href="/#contact">
                 <Typography variant="h6" component="div">
                   Contact
                 </Typography>

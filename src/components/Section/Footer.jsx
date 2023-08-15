@@ -11,7 +11,7 @@ function Footer() {
 
   return (
     <Box component={"footer"} sx={{backgroundColor:'black', marginTop:'5rem'}}>
-      <Container sx={{ display: 'flex', justifyContent:'space-between', borderBottom: '1px solid #444', padding :'4rem 0' }}>
+      <Container sx={{ display: 'flex', justifyContent:'space-between', borderBottom: '1px solid #444', padding :'4rem 1rem' }}>
         <Box>
           <Typography variant="h3" component="h3" style={{ textTransform: 'uppercase',fontSize:'1.5rem',fontWeight:"bold" }}>
             Roquigny Matthieu

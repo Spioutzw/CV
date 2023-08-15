@@ -4,13 +4,13 @@ import Link from 'next/link'
 
 function Accueil() {
     return (
-        <Container sx={{marginTop : '5rem'}} id='Accueil' style={{textAlign:'center'}} component={"section"}>
+        <Container sx={{marginTop : '10rem'}} id='Accueil' style={{textAlign:'center'}} component={"section"}>
             <Typography  variant="h3" component="h2" style={{textTransform:'uppercase'}}>
                 Bonjour ! je suis Matthieu Roquigny
             </Typography>
 
-            <Typography sx={{lineHeight: '1.6',margin: '3rem auto 3rem auto'}} variant="body" component="p">
-                Depuis tout petit je suis fan de jeux vidéo et avec un peu chance j'ai passé la plupart de mon activité professionnelle dans le monde de l'e-sport, ancien joueur pro sur Counter-Strike-Global-Offensive où j'ai pu m'épanouir et acquérir des compétences qui pourront j'espère m'aider pour ma reconversion en tant que Développeur
+            <Typography sx={{lineHeight: '2',margin: '3rem auto 3rem auto'}} variant="body" component="p">
+            Un développeur web orienté Frontend
             </Typography>
 
             <Link style={{marginTop: '5rem'}} href={"#projet"}>

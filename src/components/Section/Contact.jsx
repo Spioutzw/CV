@@ -14,7 +14,7 @@ function Contact() {
 
     const schema = yup.object().shape({
         user_name: yup.string().required('Votre prénom et votre nom est requis'),
-        user_email: yup.string().email('Veuillez mettre un email valide').required( 'Votre email est requis'),
+        user_email: yup.string().email('Veuillez mettre un email valide').required('Votre email est requis'),
         subject: yup.string().required('Le sujet de votre email est requis'),
         message: yup.string().required('Votre message est requis'),
     })
@@ -26,7 +26,7 @@ function Contact() {
 
 
 
-    const sendEmail = (data,e) => {
+    const sendEmail = (data, e) => {
 
         e.preventDefault();
 
@@ -43,19 +43,21 @@ function Contact() {
                 }
             })
         }).then((res) => {
+            console.log(res.ok);
             if (res.ok) {
                 setHidden(false);
                 setSendMessage('Votre message a bien été envoyé, je vous recontacte dès que possible !')
             } else {
-                setSendMessage('Une erreur est survenue, veuillez réessayer plus tard')
+                setHidden(false);
+                setSendMessage('Une erreur est survenue, veuillez réessayer plus tard , ou me joindre directement sur mon adresse mail : matthieu.roquigny@gmail.com')
             }
 
             setTimeout(() => {
                 setHidden(true);
                 setSendMessage('')
-            }, 5000)
+            }, 10000)
 
-            
+
         }
         ).catch((err) => {
             console.log(err);
@@ -69,7 +71,7 @@ function Contact() {
                 Contact
             </Typography>
             <Typography sx={{ lineHeight: '1.6', margin: '3rem auto 3rem auto' }} variant="body" component="p">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+                N'hésitez pas à me contacter en remplissant le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.
             </Typography>
             <Container maxWidth={'md'} sx={{
                 backgroundColor: '#FFF',
@@ -127,7 +129,7 @@ function Contact() {
                     <Button type="submit" value="Send" sx={{ padding: "1rem", maxWidth: '14rem', width: '100%', backgroundColor: '#3c6e71ff', textAlign: 'center' }} variant='contained'>
                         Envoyer
                     </Button>
-                    <Typography hidden={hidden} sx={{ lineHeight: '1.6', color:'red' }} variant="body" component="p"> 
+                    <Typography hidden={hidden} sx={{ lineHeight: '1.6', color: 'red' }} variant="body" component="p">
                         {sendMessage}
                     </Typography>
                 </FormControl>
