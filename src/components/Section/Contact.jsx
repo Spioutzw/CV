@@ -2,13 +2,15 @@
 
 import React from 'react'
 import { Typography, Container, FormControl, FormLabel, TextField, Button } from '@mui/material'
-import { TextareaAutosize } from '@mui/base';
-import { useForm } from "react-hook-form"
+import { set, useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 
 
 function Contact() {
+
+    const [hidden, setHidden] = React.useState(true);
+    const [sendMessage, setSendMessage] = React.useState('');
 
     const schema = yup.object().shape({
         user_name: yup.string().required('Votre prénom et votre nom est requis'),
@@ -24,25 +26,36 @@ function Contact() {
 
 
 
-    const sendEmail = (e) => {
+    const sendEmail = (data,e) => {
 
         e.preventDefault();
 
-        console.log(e);
 
         fetch('api/email', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 params: {
-                    name: e.target.user_name.value,
-                    email: e.target.user_email.value,
-                    message: e.target.message.value,
-                    subject: e.target.subject.value
+                    name: data.user_name,
+                    email: data.user_email,
+                    message: data.message,
+                    subject: data.subject
                 }
             })
         }).then((res) => {
-            console.log(res);
+            if (res.ok) {
+                setHidden(false);
+                setSendMessage('Votre message a bien été envoyé, je vous recontacte dès que possible !')
+            } else {
+                setSendMessage('Une erreur est survenue, veuillez réessayer plus tard')
+            }
+
+            setTimeout(() => {
+                setHidden(true);
+                setSendMessage('')
+            }, 5000)
+
+            
         }
         ).catch((err) => {
             console.log(err);
@@ -114,6 +127,9 @@ function Contact() {
                     <Button type="submit" value="Send" sx={{ padding: "1rem", maxWidth: '14rem', width: '100%', backgroundColor: '#3c6e71ff', textAlign: 'center' }} variant='contained'>
                         Envoyer
                     </Button>
+                    <Typography hidden={hidden} sx={{ lineHeight: '1.6', color:'red' }} variant="body" component="p"> 
+                        {sendMessage}
+                    </Typography>
                 </FormControl>
             </Container>
         </Container>
