@@ -15,7 +15,6 @@ export default function NavBar() {
   const refNav = React.useRef(null);
   const open = Boolean(anchorEl);
 
-  console.log(anchorEl);
 
   const handleClick = () => {
     setAnchorEl(refNav.current);

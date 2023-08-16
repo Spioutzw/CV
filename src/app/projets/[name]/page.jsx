@@ -54,7 +54,6 @@ function Page({params}) {
   const decodeParams = decodeURIComponent(params.name)
   const project = info[decodeParams]
 
-  console.log(project.imageSite)
 
   return (
     <>

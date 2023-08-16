@@ -46,7 +46,6 @@ function Contact() {
                 }
             })
         }).then((res) => {
-            console.log(res.ok);
             if (res.ok) {
                 setHidden(false);
                 setSendMessage('Votre message a bien été envoyé, je vous recontacte dès que possible !')
@@ -58,11 +57,7 @@ function Contact() {
                 setHidden(true);
                 setSendMessage('')
             }, 10000)
-        }
-        ).catch((err) => {
-            console.log(err);
-        }
-        )
+        })
     };
 
 
