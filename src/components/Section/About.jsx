@@ -45,13 +45,14 @@ function About() {
                             <Typography variant="h5" component="h3" style={{ textTransform: 'uppercase' }}>
                                 Qui suis-je ?
                             </Typography>
+                            <Box>
                             <Typography sx={{ lineHeight: '1.6', margin: '3rem auto 3rem auto', maxWidth: '572px', textAlign: 'justify' }} variant="body" component="p">
                                 Depuis tout petit je suis fan de jeux vidéo et avec un peu chance j'ai passé la plupart de mon activité professionnelle dans le monde de l'e-sport, ancien joueur pro et dernièrement coach sur Counter-Strike-Global-Offensive où j'ai pu m'épanouir et acquérir des compétences qui pourront j'espère m'aider pour ma reconversion en tant que Développeur web.
-                                <br />
-                                <Box sx={{display:'flex', justifyContent:'center',marginTop:'2rem'}}>
+                            </Typography>
+                            <Box sx={{display:'flex', justifyContent:'center',marginTop:'2rem'}}>
                                     <Button variant="contained" href="/cv.pdf" target="_blank" sx={{ padding: "1rem", maxWidth: '14rem', width: '100%', backgroundColor: '#3c6e71ff', textAlign: 'center' }}>Mon Cv</Button>
                                 </Box>
-                            </Typography>
+                            </Box>
                         </Box>
                     </div>
                 </Grow>
