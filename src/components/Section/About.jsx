@@ -46,7 +46,7 @@ function About() {
                                 Qui suis-je ?
                             </Typography>
                             <Box>
-                            <Typography sx={{ lineHeight: '1.6', margin: '3rem auto 3rem auto', maxWidth: '572px', textAlign: 'justify' }} variant="body" component="p">
+                            <Typography sx={{ lineHeight: '2', margin: '3rem auto 3rem auto', maxWidth: '572px', textAlign: 'justify' }} variant="body" component="p">
                                 Depuis tout petit je suis fan de jeux vidéo et avec un peu chance j&apos;ai passé la plupart de mon activité professionnelle dans le monde de l&apos;e-sport, ancien joueur pro et dernièrement coach sur Counter-Strike-Global-Offensive où j&apos;ai pu m&apos;épanouir et acquérir des compétences qui pourront j&apos;espère m&apos;aider pour ma reconversion en tant que Développeur web.
                             </Typography>
                             <Box sx={{display:'flex', justifyContent:'center',marginTop:'2rem'}}>
@@ -64,7 +64,7 @@ function About() {
                             </Typography>
                             <List sx={{ lineHeight: '1.6', margin: '3rem auto 3rem auto', display: 'flex', flexWrap: 'wrap', whiteSpace: 'pre-wrap', gap: '1rem', justifyContent: 'space-evenly' }}>
                                 {stackTechnique.map((item, index) => (
-                                    <ListItem key={index} sx={{ textAlign: 'left', width: '150px', backgroundColor: 'grey', }}>
+                                    <ListItem key={index} sx={{ textAlign: 'left', width: '150px', backgroundColor: '#3C6E71', }}>
                                         {item}
                                     </ListItem>
                                 ))}
