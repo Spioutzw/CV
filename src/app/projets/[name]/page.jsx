@@ -1,5 +1,7 @@
-import React from 'react'
-import { Typography, List, ListItem,Container,Button,Box } from '@mui/material'
+'use client'
+
+import React, { useState } from 'react'
+import { Typography, List, ListItem, Container, Button, Box } from '@mui/material'
 import Image from 'next/image'
 import imageEntertainment from '../../../../public/images/imageEntertainment.png'
 import imageMultiStepForm from '../../../../public/images/imageMultiStepForm.png'
@@ -9,7 +11,11 @@ import imageIpTracker from '../../../../public/images/imageIpTracker.png'
 import Footer from '@/components/Section/Footer'
 import NavBar from '@/components/Section/NavBar'
 
-function Page({params}) {
+function Page({ params }) {
+
+  useState(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const info = {
     'Entertainment web app': {
@@ -39,7 +45,7 @@ function Page({params}) {
       techno: ['NextJs', 'React', 'axios', 'api', 'Materiel-UI'],
       urlGithub: 'https://github.com/Spioutzw/rest-countries-api-with-color-theme-switcher-master',
       urlSite: 'https://rest-countries-api-with-color-theme-switcher-master-six.vercel.app/',
-      imageSite:  imageRestCountries
+      imageSite: imageRestCountries
     },
     'Multi-step form': {
       title: 'Multi-step form',
@@ -47,7 +53,7 @@ function Page({params}) {
       techno: ['NextJs', 'React', 'React-Hook-Form', 'Yup'],
       urlGithub: 'https://github.com/Spioutzw/multistepform',
       urlSite: 'https://multistepform-gules.vercel.app/',
-      imageSite:  imageMultiStepForm
+      imageSite: imageMultiStepForm
     }
   }
 
@@ -59,48 +65,54 @@ function Page({params}) {
     <>
       {project && (
         <>
-        <NavBar/>
-        <Container  sx={{ marginTop: '5rem' }} id='presentation' style={{ textAlign: 'center' }} component={"section"}>
-          <Typography sx={{marginBottom:'2rem'}} variant="h4">{project.title}</Typography>
+          <NavBar />
+          <Container sx={{ marginTop: '5rem' }} id='presentation' style={{ textAlign: 'center' }} component={"section"}>
+            <Typography sx={{ marginBottom: '2rem' }} variant="h4">{project.title}</Typography>
 
-          <Image style={{marginBottom:'2rem',maxWidth:'900px', width:"100%",height:"100%",objectFit:'contain'}} src={project?.imageSite}  alt="image projet" />
-          
-          <Typography sx={{marginBottom:'2rem',textAlign:'justify',lineHeight:2}} variant="body1">{project.text}</Typography>
-          <Typography sx={{marginBottom:'2rem',textAlign:'left'}} variant="h5">Compte de test:</Typography>
-          <Typography sx={{marginBottom:'2rem',textAlign:'left'}} variant="body1">Email: {project.log.mail}</Typography>
-          <Typography sx={{marginBottom:'2rem',textAlign:'left'}} variant="body1">Mot de passe: {project.log.password}</Typography>
-          <Typography sx={{marginBottom:'2rem',textAlign:'left'}} variant="h5">Technologies utilisées:</Typography>
-          <List sx={{display:"grid",gridTemplateColumns: 'repeat(auto-fit, minmax(14rem, 1fr))', gridGap: '1.5rem',marginBottom:'1rem',marginBottom:'1rem', marginLeft: '1.5rem'}}>
-            {project.techno.map((tech, index) => (
-              <ListItem sx={{
-                padding: '1rem 2rem',
-                marginBottom: '1.5rem',
-                marginRight: '1.5rem',
-                fontSize: '1.2rem',
-                background: 'rgba(153,153,153,.2)',
-                borderRadius: '5px',
-                fontWeight: 600,
-                color: '#fff',
-                whiteSpace: 'nowrap',
-                width:'unset',
-                textTransform:'capitalize',
-                lineHeight:'1.5rem',
-                justifyContent:'center'
-              }}
-                 key={index}>{tech}</ListItem>
-            ))}
-          </List>
-          <Typography sx={{marginBottom:'2rem',textAlign:'left'}} variant="h5">Liens:</Typography>
-          <Box sx={{display:'flex', justifyContent:'space-between'}}>
-            <Button variant="contained" href="/#projets" sx={{padding:"1rem", maxWidth:'14rem', width:'100%',backgroundColor:'#3c6e71ff'}}>Retour</Button>
-            <Button variant="contained" href={project.urlGithub} target='_blank' sx={{padding:"1rem", maxWidth:'14rem', width:'100%',backgroundColor:'#3c6e71ff'}}>Github</Button>
-            <Button variant="contained" href={project.urlSite} target='_blank' sx={{padding:"1rem", maxWidth:'14rem', width:'100%',backgroundColor:'#3c6e71ff'}}>Site</Button>
-          </Box>
-        </Container>
-        <Footer/>
+            <Image style={{ marginBottom: '2rem', maxWidth: '900px', width: "100%", height: "100%", objectFit: 'contain' }} src={project?.imageSite} alt="image projet" />
+
+            <Typography sx={{ marginBottom: '2rem', textAlign: 'justify', lineHeight: 2 }} variant="body1">{project.text}</Typography>
+            {project.log && (
+              <>
+                <Typography sx={{ marginBottom: '2rem', textAlign: 'left' }} variant="h5">Compte de test:</Typography>
+                <Typography sx={{ marginBottom: '2rem', textAlign: 'left' }} variant="body1">Email: {project.log.mail}</Typography>
+                <Typography sx={{ marginBottom: '2rem', textAlign: 'left' }} variant="body1">Mot de passe: {project.log.password}</Typography>
+              </>
+            )
+            }
+
+            <Typography sx={{ marginBottom: '2rem', textAlign: 'left' }} variant="h5">Technologies utilisées:</Typography>
+            <List sx={{ display: "grid", gridTemplateColumns: 'repeat(auto-fit, minmax(14rem, 1fr))', gridGap: '1.5rem', marginBottom: '1rem', marginBottom: '1rem', marginLeft: '1.5rem' }}>
+              {project.techno.map((tech, index) => (
+                <ListItem sx={{
+                  padding: '1rem 2rem',
+                  marginBottom: '1.5rem',
+                  marginRight: '1.5rem',
+                  fontSize: '1.2rem',
+                  background: 'rgba(153,153,153,.2)',
+                  borderRadius: '5px',
+                  fontWeight: 600,
+                  color: '#fff',
+                  whiteSpace: 'nowrap',
+                  width: 'unset',
+                  textTransform: 'capitalize',
+                  lineHeight: '1.5rem',
+                  justifyContent: 'center'
+                }}
+                  key={index}>{tech}</ListItem>
+              ))}
+            </List>
+            <Typography sx={{ marginBottom: '2rem', textAlign: 'left' }} variant="h5">Liens:</Typography>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Button variant="contained" href="/#projets" sx={{ padding: "1rem", maxWidth: '14rem', width: '100%', backgroundColor: '#3c6e71ff' }}>Retour</Button>
+              <Button variant="contained" href={project.urlGithub} target='_blank' sx={{ padding: "1rem", maxWidth: '14rem', width: '100%', backgroundColor: '#3c6e71ff' }}>Github</Button>
+              <Button variant="contained" href={project.urlSite} target='_blank' sx={{ padding: "1rem", maxWidth: '14rem', width: '100%', backgroundColor: '#3c6e71ff' }}>Site</Button>
+            </Box>
+          </Container>
+          <Footer />
         </>
       )}
-      </>
+    </>
   )
 }
 
