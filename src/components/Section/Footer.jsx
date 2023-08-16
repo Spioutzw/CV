@@ -25,10 +25,10 @@ function Footer() {
             Social
           </Typography>
           <div>
-            <IconButton href='https://github.com/Spioutzw'>
+            <IconButton href='https://github.com/Spioutzw' target='_blank'>
               <GitHubIcon sx={{color:'white'}}/>
             </IconButton>
-            <IconButton href='https://www.linkedin.com/in/roquigny-matthieu-28478b1b3/' >
+            <IconButton href='https://www.linkedin.com/in/roquigny-matthieu-28478b1b3/' target='_blank' >
               <LinkedInIcon sx={{color:'white'}} />
             </IconButton>
           </div>
