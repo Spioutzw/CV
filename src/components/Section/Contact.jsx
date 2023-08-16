@@ -70,7 +70,7 @@ function Contact() {
                 Contact
             </Typography>
             <Typography sx={{ lineHeight: '1.6', margin: '3rem auto 3rem auto' }} variant="body" component="p">
-                N'hésitez pas à me contacter en remplissant le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.
+                N&apos;hésitez pas à me contacter en remplissant le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.
             </Typography>
             </div>
             </Grow>
