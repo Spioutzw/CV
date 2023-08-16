@@ -5,6 +5,7 @@ import React from 'react'
 import { Typography, Container, Box, Grow, List, ListItem, Button } from '@mui/material'
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useInView } from 'react-intersection-observer';
+import Link from 'next/link';
 
 function About() {
 
@@ -46,11 +47,13 @@ function About() {
                                 Qui suis-je ?
                             </Typography>
                             <Box>
-                            <Typography sx={{ lineHeight: '2', margin: '3rem auto 3rem auto', maxWidth: '572px', textAlign: 'justify' }} variant="body" component="p">
-                                Depuis tout petit je suis fan de jeux vidéo et avec un peu chance j&apos;ai passé la plupart de mon activité professionnelle dans le monde de l&apos;e-sport, ancien joueur pro et dernièrement coach sur Counter-Strike-Global-Offensive où j&apos;ai pu m&apos;épanouir et acquérir des compétences qui pourront j&apos;espère m&apos;aider pour ma reconversion en tant que Développeur web.
-                            </Typography>
-                            <Box sx={{display:'flex', justifyContent:'center',marginTop:'2rem'}}>
-                                    <Button variant="contained" href="/cv.pdf" target="_blank" sx={{ padding: "1rem", maxWidth: '14rem', width: '100%', backgroundColor: '#3c6e71ff', textAlign: 'center' }}>Mon Cv</Button>
+                                <Typography sx={{ lineHeight: '2', margin: '3rem auto 3rem auto', maxWidth: '572px', textAlign: 'justify' }} variant="body" component="p">
+                                    Depuis tout petit je suis fan de jeux vidéo et avec un peu chance j&apos;ai passé la plupart de mon activité professionnelle dans le monde de l&apos;e-sport, ancien joueur pro et dernièrement coach sur Counter-Strike-Global-Offensive où j&apos;ai pu m&apos;épanouir et acquérir des compétences qui pourront j&apos;espère m&apos;aider pour ma reconversion en tant que Développeur web.
+                                </Typography>
+                                <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+                                    <Link style={{width:"100%"}} href="/cv.pdf" target="_blank">
+                                        <Button variant="contained"  sx={{ padding: "1rem", maxWidth: '14rem', width: '100%', backgroundColor: '#3c6e71ff', textAlign: 'center' }}>Mon Cv</Button>
+                                    </Link>
                                 </Box>
                             </Box>
                         </Box>
@@ -64,7 +67,7 @@ function About() {
                             </Typography>
                             <List sx={{ lineHeight: '1.6', margin: '3rem auto 3rem auto', display: 'flex', flexWrap: 'wrap', whiteSpace: 'pre-wrap', gap: '1rem', justifyContent: 'space-evenly' }}>
                                 {stackTechnique.map((item, index) => (
-                                    <ListItem key={index} sx={{ textAlign: 'left', width: '150px', backgroundColor: '#3C6E71', color:'#fff' }}>
+                                    <ListItem key={index} sx={{ textAlign: 'left', width: '150px', backgroundColor: '#3C6E71', color: '#fff' }}>
                                         {item}
                                     </ListItem>
                                 ))}
