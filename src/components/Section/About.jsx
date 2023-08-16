@@ -64,7 +64,7 @@ function About() {
                             </Typography>
                             <List sx={{ lineHeight: '1.6', margin: '3rem auto 3rem auto', display: 'flex', flexWrap: 'wrap', whiteSpace: 'pre-wrap', gap: '1rem', justifyContent: 'space-evenly' }}>
                                 {stackTechnique.map((item, index) => (
-                                    <ListItem key={index} sx={{ textAlign: 'left', width: '150px', backgroundColor: '#3C6E71', }}>
+                                    <ListItem key={index} sx={{ textAlign: 'left', width: '150px', backgroundColor: '#3C6E71', color:'#fff' }}>
                                         {item}
                                     </ListItem>
                                 ))}
