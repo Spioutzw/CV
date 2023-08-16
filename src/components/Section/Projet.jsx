@@ -15,12 +15,16 @@ function Projet() {
 
   return (
     <Container id='projet' sx={{ textAlign: 'center', maxWidth: '412px' }} component={'section'}>
+      <Grow in={inView} timeout={1000}>
+        <div>
       <Typography variant='h3' component='h2' sx={{ textTransform: 'uppercase', marginBottom: '3rem' }}>
         Mes projets !
       </Typography>
+      </div>
+      </Grow>
       <div ref={ref}>
         <Grid container spacing={12} columns={10} sx={{ justifyContent: 'center',gap:'5rem', margin:'0' }}>
-          <Grow in={inView} timeout={1000}>
+          <Grow in={inView} timeout={2000}>
             <div>
               <CardComponent
                 title={'Entertainment web app'}
@@ -30,7 +34,7 @@ function Projet() {
               />
             </div>
           </Grow>
-          <Grow in={inView} timeout={1500}>
+          <Grow in={inView} timeout={2500}>
             <div>
               <CardComponent
                 title={'IP Address Tracker'}
@@ -40,7 +44,7 @@ function Projet() {
               />
             </div>
           </Grow>
-          <Grow in={inView} timeout={2000}>
+          <Grow in={inView} timeout={4000}>
             <div>
               <CardComponent
                 title={'REST Countries'}
@@ -50,7 +54,7 @@ function Projet() {
               />
             </div>
           </Grow>
-          <Grow in={inView} timeout={2500}>
+          <Grow in={inView} timeout={4500}>
             <div>
               <CardComponent
                 title={'Multi-step form'}

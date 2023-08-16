@@ -18,7 +18,11 @@ function Page({params}) {
       techno: ['NextJs', 'React', 'MongoDb', 'api-rest', 'pagination', 'Next-Auth', 'React-Hook-Form', 'Yup'],
       urlGithub: 'https://github.com/Spioutzw/movieapp',
       urlSite: 'https://movieapp-spioutzw.vercel.app/',
-      imageSite: imageEntertainment 
+      imageSite: imageEntertainment,
+      log: {
+        mail: 'admin@gmail.com',
+        password: 'adminweb'
+      }
     },
     'IP Address Tracker': {
       title: 'IP Address Tracker',
@@ -60,9 +64,12 @@ function Page({params}) {
         <Container  sx={{ marginTop: '5rem' }} id='presentation' style={{ textAlign: 'center' }} component={"section"}>
           <Typography sx={{marginBottom:'2rem'}} variant="h4">{project.title}</Typography>
 
-          <Image style={{marginBottom:'2rem',maxWidth:'900px', width:"100%",height:"100%"}} objectFit='contain' src={project?.imageSite}  alt="image projet" />
+          <Image style={{marginBottom:'2rem',maxWidth:'900px', width:"100%",height:"100%",objectFit:'contain'}} src={project?.imageSite}  alt="image projet" />
           
           <Typography sx={{marginBottom:'2rem',textAlign:'justify',lineHeight:2}} variant="body1">{project.text}</Typography>
+          <Typography sx={{marginBottom:'2rem',textAlign:'left'}} variant="h5">Compte de test:</Typography>
+          <Typography sx={{marginBottom:'2rem',textAlign:'left'}} variant="body1">Email: {project.log.mail}</Typography>
+          <Typography sx={{marginBottom:'2rem',textAlign:'left'}} variant="body1">Mot de passe: {project.log.password}</Typography>
           <Typography sx={{marginBottom:'2rem',textAlign:'left'}} variant="h5">Technologies utilisées:</Typography>
           <List sx={{display:"grid",gridTemplateColumns: 'repeat(auto-fit, minmax(14rem, 1fr))', gridGap: '1.5rem',marginBottom:'1rem',marginBottom:'1rem', marginLeft: '1.5rem'}}>
             {project.techno.map((tech, index) => (

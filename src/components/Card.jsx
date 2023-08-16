@@ -21,7 +21,7 @@ function CardComponent({ title, description, image, name }) {
         <Grid xs={8} md={8} lg={4} onClick={handleRedirection} sx={{height: '100%'}} >
             <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer' ,width: '100%', height: '100%', maxWidth: 450, maxHeight: 400 }}>
                 <CardMedia>
-                    <Image src={image} alt="Image de Roquigny Matthieu" width={100} height={100} objectFit='contain' style={{ borderRadius: '50%', marginTop: '1rem' }} />
+                    <Image src={image} alt="Image de Roquigny Matthieu" width={200} height={200} style={{ marginTop: '1rem',objectFit:'contain' }} />
                 </CardMedia>
                 <CardContent>
                     <Typography variant="h5" component="h3" style={{ textTransform: 'uppercase' }}>
