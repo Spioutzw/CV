@@ -5,7 +5,7 @@ import { Typography, Button, Container, Grow } from '@mui/material'
 import Link from 'next/link'
 import { useInView } from 'react-intersection-observer'
 
-function Accueil() {
+const Accueil = () => {
     const [ref, inView] = useInView({
         triggerOnce: true,
     })

@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import Image from 'next/image'
 import Link from 'next/link';
 
-function CardComponent({ title, description, image, name }) {
+const CardComponent = ({ title, description, image, name }) => {
 
 
     return (

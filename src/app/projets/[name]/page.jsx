@@ -7,11 +7,16 @@ import imageEntertainment from '../../../../public/images/imageEntertainment.png
 import imageMultiStepForm from '../../../../public/images/imageMultiStepForm.png'
 import imageRestCountries from '../../../../public/images/imageRestCountries.png'
 import imageIpTracker from '../../../../public/images/imageIpTracker.png'
+import listProduct from '../../../../public/images/listProduct.jpg'
+import editProduct from '../../../../public/images/editProduct.jpg'
+import homeProduct from '../../../../public/images/homeProduct.jpg'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 import Footer from '@/components/Section/Footer'
 import NavBar from '@/components/Section/NavBar'
 
-function Page({ params }) {
+const Page = ({ params }) => {
 
   useState(() => {
     window.scrollTo(0, 0)
@@ -54,7 +59,15 @@ function Page({ params }) {
       urlGithub: 'https://github.com/Spioutzw/multistepform',
       urlSite: 'https://multistepform-gules.vercel.app/',
       imageSite: imageMultiStepForm
+    },
+    'zeroGaspi': {
+      title: 'zeroGaspi',
+      text: "Ce projet est une application mobile pour Android pour gérer les dates de péremptions des produits qu'on a achetés pour éviter le gaspillage.",
+      techno: ['React-native', 'React-Hook-Form', 'Yup', 'firebase', 'expo'],
+      urlGithub: 'https://github.com/Spioutzw/zeroGaspi',
+      imageSite: [listProduct, editProduct, homeProduct]
     }
+
   }
 
   const decodeParams = decodeURIComponent(params.name)
@@ -69,7 +82,22 @@ function Page({ params }) {
           <Container sx={{ marginTop: '5rem' }} id='presentation' style={{ textAlign: 'center' }} component={"section"}>
             <Typography sx={{ marginBottom: '2rem' }} variant="h4">{project.title}</Typography>
 
-            <Image style={{ marginBottom: '2rem', maxWidth: '900px', width: "100%", height: "100%", objectFit: 'contain' }} src={project?.imageSite} alt="image projet" />
+            {Array.isArray(project.imageSite) ?
+             <div style={{margin: '0 auto',width:'50%'}}>
+               <Carousel showArrows={true} showStatus={false} >
+                {project.imageSite.map((image, idx) => {
+                  return (
+                    <div key={idx}>
+                      <Image style={{ marginBottom: '2rem', maxWidth: '900px', objectFit: 'contain' }} width={500} height={500} src={image.src} alt="image projet" />
+                    </div>
+                  )
+
+                })}
+              </Carousel>
+             </div>
+
+              :
+              <Image style={{ marginBottom: '2rem', maxWidth: '900px', width: "100%", height: "100%", objectFit: 'contain' }} src={project?.imageSite} alt="image projet" />}
 
             <Typography sx={{ marginBottom: '2rem', textAlign: 'justify', lineHeight: 2 }} variant="body1">{project.text}</Typography>
             {project.log && (
@@ -106,7 +134,7 @@ function Page({ params }) {
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <Button variant="contained" href="/#projets" sx={{ padding: "1rem", maxWidth: '14rem', width: '100%', backgroundColor: '#3c6e71ff' }}>Retour</Button>
               <Button variant="contained" href={project.urlGithub} target='_blank' sx={{ padding: "1rem", maxWidth: '14rem', width: '100%', backgroundColor: '#3c6e71ff' }}>Github</Button>
-              <Button variant="contained" href={project.urlSite} target='_blank' sx={{ padding: "1rem", maxWidth: '14rem', width: '100%', backgroundColor: '#3c6e71ff' }}>Site</Button>
+              {project.urlSite && <Button variant="contained" href={project.urlSite} target='_blank' sx={{ padding: "1rem", maxWidth: '14rem', width: '100%', backgroundColor: '#3c6e71ff' }}>Site</Button>}
             </Box>
           </Container>
           <Footer />

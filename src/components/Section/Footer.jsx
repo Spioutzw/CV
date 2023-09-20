@@ -5,7 +5,7 @@ import { Box, Container, IconButton, Typography } from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-function Footer() {
+const Footer = () => {
 
   const date = new Date().getFullYear();
 

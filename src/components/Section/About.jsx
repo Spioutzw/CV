@@ -7,7 +7,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
 
-function About() {
+const About = () => {
 
     const [ref, inView] = useInView({
         triggerOnce: true,
@@ -18,6 +18,7 @@ function About() {
         'CSS',
         'JavaScript',
         'React',
+        'React Native',
         'Next js',
         'Git'
     ]
@@ -62,10 +63,10 @@ function About() {
                 <Grow in={inView} timeout={4000}>
                     <div>
                         <Box>
-                            <Typography variant="h5" component="h3" style={{ textTransform: 'uppercase' }}>
+                            <Typography variant="h5" component="h3" sx={{ textTransform: 'uppercase',margin:"1rem" }}>
                                 Mes stacks techniques
                             </Typography>
-                            <List sx={{ lineHeight: '1.6', margin: '3rem auto 3rem auto', display: 'flex', flexWrap: 'wrap', whiteSpace: 'pre-wrap', gap: '1rem', justifyContent: 'space-evenly' }}>
+                            <List sx={{ lineHeight: '1.6', margin: '3rem auto 3rem auto', display: 'grid', whiteSpace: 'pre-wrap', gap: '2rem', gridTemplateColumns:'repeat(auto-fit, minmax(9rem, 13ch))', justifyContent:'center' }}>
                                 {stackTechnique.map((item, index) => (
                                     <ListItem key={index} sx={{ textAlign: 'left', width: '150px', backgroundColor: '#3C6E71', color: '#fff' }}>
                                         {item}

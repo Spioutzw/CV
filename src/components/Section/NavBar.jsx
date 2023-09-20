@@ -8,7 +8,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import imageProfil from '../../../public/images/1627459720791.jpg';
 
-export default function NavBar() {
+const NavBar = () => {
 
   const [anchorEl, setAnchorEl] = React.useState(null)
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -107,3 +107,5 @@ export default function NavBar() {
     </Box>
   );
 }
+
+export default NavBar;

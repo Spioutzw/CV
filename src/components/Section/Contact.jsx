@@ -8,7 +8,7 @@ import * as yup from "yup"
 import { useInView } from 'react-intersection-observer';
 
 
-function Contact() {
+const Contact = () => {
 
     const [hidden, setHidden] = React.useState(true);
     const [sendMessage, setSendMessage] = React.useState('');
@@ -130,7 +130,7 @@ function Contact() {
                                     {...register("message")}
                                     minRows={10}
                                 />
-                                <Button type="submit" value="Send" sx={{ padding: "1rem", maxWidth: '14rem', width: '100%', backgroundColor: '#3c6e71ff', textAlign: 'center' }} variant='contained'>
+                                <Button type="submit" value="Send" sx={{ padding: "1rem", maxWidth: '14rem', width: '100%', backgroundColor: '#3c6e71ff', textAlign: 'center',margin: '0 auto' }} variant='contained'>
                                     Envoyer
                                 </Button>
                                 <Typography hidden={hidden} sx={{ lineHeight: '1.6', color: 'red' }} variant="body" component="p">

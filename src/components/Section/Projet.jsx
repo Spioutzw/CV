@@ -6,9 +6,10 @@ import imageIpTracker from '../../../public/images/imageIpTracker.png';
 import imageRestCountries from '../../../public/images/imageRestCountries.png';
 import imageMultiStepForm from '../../../public/images/imageMultiStepForm.png';
 import imageEntertainment from '../../../public/images/imageEntertainment.png';
+import homeProduct from '../../../public/images/homeProduct.jpg';
 import CardComponent from '../Card';
 
-function Projet() {
+const Projet = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
   });
@@ -22,7 +23,7 @@ function Projet() {
       </Typography>
       </div>
       </Grow>
-      <div ref={ref}>
+      <div ref={ref} style={{display:"flex"}}>
         <Grid container spacing={12} columns={10} sx={{ justifyContent: 'center',gap:'5rem', margin:'0' }}>
           <Grow in={inView} timeout={2000}>
             <div>
@@ -61,6 +62,16 @@ function Projet() {
                 description="formulaire multi-étapes construit avec Next.js et React."
                 image={imageMultiStepForm}
                 name={'Multi-step form'}
+              />
+            </div>
+          </Grow>
+          <Grow in={inView} timeout={4500}>
+            <div>
+              <CardComponent
+                title={'zeroGaspi'}
+                description="Application mobile avec react-native et firebase pour scanner des produits et avoir un suivi des dates de peremptions."
+                image={homeProduct}
+                name={'zeroGaspi'}
               />
             </div>
           </Grow>
